@@ -1,3 +1,5 @@
+<!-- Help for blocks from Jinja documentation --!>
+
 <!DOCTYPE html>
 <html>
 
@@ -14,9 +16,13 @@
 <body>
 
 	<h1>Hello, world?</h1>
+	{% block content %}
+	{% endblock content %}
 	{% for instrument in instruments %}
 	<p> {{ instrument }} </p>
 	{% endfor %}
+	
+      	
 	
 </body>
 

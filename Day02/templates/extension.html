@@ -1,0 +1,16 @@
+<!--Help from Jinja Documentation--!>
+
+{% extends "base.html" %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+	<p>This is an extension</p>
+	{% if music %}
+		<p>There is still music</p>
+	{% else %}
+		<p>Please add music</p>
+	{% endif %}
+
+{% endblock content %}
+
