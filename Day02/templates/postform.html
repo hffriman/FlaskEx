@@ -1,13 +1,16 @@
+<!-- Source: course material --!>
+
 {% extends "base.html" %}
 
 {% block content %}
 
+<h2> Side calculator </h2>
 <form method=POST>
-	name:<br>
-	<input type=text name="name"><br>
-	password<br>
-	<input type=password name="password"><br>
+	<label>side:<br>
+	<input type=text name="side"></label><br>
 	<input type=submit>
 </form>
+
+<p>Area of the square is {{area}}</p>
 
 {% endblock content %}
