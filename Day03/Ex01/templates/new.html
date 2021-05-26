@@ -1,4 +1,4 @@
-<!-- Thanks to a co-student for showing a way to hide some fields --!>
+<!-- Thanks to co-students for showing a way to hide some fields --!>
 
 {% extends "base.html" %}
 
@@ -10,9 +10,12 @@
 {% block content %}
 	<form method=POST>
 		{% for field in form %}
+		<p>
 		{% if not field.flags.hidden %}
-		<p>{{field.label}}: {{field}}</p>
+			{{field.label}}: 
 		{% endif %}
+		{{field}}
+		</p>
 		{% endfor %}
 		<input type=submit>
 	</form>
