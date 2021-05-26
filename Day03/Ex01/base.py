@@ -1,10 +1,13 @@
-#Sources: Course material
+# Sources: Course material
+# Flask documentation: Message Flashing (version 1.0)
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 from flask_wtf import FlaskForm
 from wtforms.ext.sqlalchemy.orm import model_form
+
+
 
 app = Flask(__name__)
 app.secret_key = "yeeshaePae2rux7Bohqu3eC7ahz5ai"
@@ -38,6 +41,11 @@ def addForm():
 	print(request.form) #test only
 	return render_template("new.html", form=form)
 
+
+@app.route("/msg")
+def msgPage():
+	flash("This is information")
+	return redirect("/")
 
 
 @app.route("/")

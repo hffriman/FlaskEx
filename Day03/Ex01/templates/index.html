@@ -4,6 +4,14 @@
 	Index
 {% endblock title %}
 
+{% block message %}
+	{% if get_flashed_messages() %}
+		{% for message in get_flashed_messages() %}
+			<p><b>{{message}}</b></p>
+		{% endfor %}
+	{% endif %}
+{% endblock message %}
+
 {% block content %}
 	<h1>Movies in the Database</h1>
 	{% for movie in movies %}
