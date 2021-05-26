@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Index
+{% endblock title %}
+
+{% block messages %}
+{% endblock messages %}
+
+{% block content %}
+	<h1>Movies in the Database</h1>
+	{% for movie in movies %}
+		<p>{{movie.name}} (directed by {{movie.director}}, {{movie.year}})</p>
+	{% endfor %}
+{% endblock content %}

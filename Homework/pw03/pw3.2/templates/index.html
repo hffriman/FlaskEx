@@ -1,0 +1,19 @@
+<!--Sources:--!>
+<!---------Course material-------!>
+<!---------W3Schools: HTML Lists-------!>
+
+{% extends "base.html" %}
+
+{% block title %} Novel List {% endblock title %}
+
+{% block content %}
+
+	<h1>Novel List</h1>
+	<br>
+	{% for novel in novels %}
+		<h4>{{novel.title}}</h4>
+		<p>Written by {{novel.author}}</p>
+		<p>Originally published by {{novel.publisher}} in {{novel.year}}</p><br>
+	{% endfor %}
+
+{% endblock content %}

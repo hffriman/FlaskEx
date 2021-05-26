@@ -1,0 +1,30 @@
+<!--Sources: course material--!>
+
+<!DOCTYPE html>
+
+<head>
+	<title>{% block title %} Index {% endblock title %} </title>
+	<meta charset="UTF-8">
+	<meta name=viewport
+		content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+	body {font-family: sans-serif; text-align: center}
+</style>
+
+<body>
+	<nav>
+		<a href="/left">Left button</a>
+		<a href="/right">Right button</a>
+	</nav>
+	
+	{% block message %}	
+
+	{% endblock message %}
+
+	{% block content %}
+
+	{% endblock content %}
+
+</body>

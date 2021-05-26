@@ -1,0 +1,26 @@
+<!--Source: course material--!>
+
+{% extends "base.html" %}
+
+{% block title %} Index {% endblock title %}
+
+
+{% block message %}
+
+	{% if get_flashed_messages() %}
+
+		{% for message in get_flashed_messages() %}
+
+			<p><b>{{message}}</b></p>
+
+		{% endfor %}
+
+	{% endif %}
+
+{% endblock message %}
+
+
+{% block content %}
+	<h1>Two Directions</h1>
+	<p>Explore two directions by pressing the buttons above</p>
+{% endblock content %}

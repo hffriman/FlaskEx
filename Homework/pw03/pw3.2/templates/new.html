@@ -1,0 +1,21 @@
+<!--Source: Course material--!>
+
+{% extends "base.html" %}
+
+{% block title %} Add a Novel {% endblock title %}
+
+{% block content %}
+
+	<h1>Add a Novel</h1>
+	<form method=POST>
+		{% for field in form %}
+		<p>
+		{% if not field.flags.hidden %}
+			{{field.label}}: <br>
+		{% endif %}
+		{{field}}
+		</p>
+		{% endfor %}
+		<input type=submit>
+	</form>
+{% endblock content %}
