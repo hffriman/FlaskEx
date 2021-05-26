@@ -1,10 +1,13 @@
 #Sources: Course material
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
+from flask_wtf import FlaskForm
+from wtforms.ext.sqlalchemy.orm import model_form
 
+app = Flask(__name__)
+app.secret_key = "yeeshaePae2rux7Bohqu3eC7ahz5ai"
 db = SQLAlchemy(app)
 
 
@@ -14,6 +17,7 @@ class Movie(db.Model):
 	year = db.Column(db.String, nullable=False)
 	director = db.Column(db.String, nullable=False)
 
+MovieForm = model_form(Movie, base_class=FlaskForm, db_session=db.session)
 
 @app.before_first_request
 def initMe():
@@ -26,6 +30,14 @@ def initMe():
 	db.session.add(movie)
 
 	db.session.commit()
+
+
+@app.route("/new", methods=["GET", "POST"])
+def addForm():
+	form = MovieForm()
+	print(request.form) #test only
+	return render_template("new.html", form=form)
+
 
 
 @app.route("/")
