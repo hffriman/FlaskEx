@@ -1,0 +1,18 @@
+<!--Sources:--!>
+<!----Course material----!>
+
+{% set title = "Address Book: Index" %}
+
+{% extends "base.html" %}
+
+{% block content %}
+	
+	<h2>Contact List</h2>
+
+	{% for contact in contacts %}
+		<p>{{contact.name}}, {{contact.email}}, {{contact.phone}}-------  
+		 <a href="{{contact.id}}/edit">Edit</a>/<a href="{{contact.id}}/delete">Delete</a></p>
+
+	{% endfor %}
+
+{% endblock content %}

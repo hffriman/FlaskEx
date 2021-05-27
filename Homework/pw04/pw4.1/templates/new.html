@@ -1,0 +1,29 @@
+<!--Soure: Course material--!>
+
+{% set title = "Add a New Contact" %}
+
+{% extends "base.html" %}
+
+{% block content %}
+	
+	<h2>Add a New Contact</h2>
+	
+		<form method=POST>
+		
+		{% for field in form %}
+
+		<p>
+			{% if not field.flags.hidden %}
+
+				{{field.label}} <br>
+
+			{% endif %}
+			
+			{{field}} <br>
+		</p>
+
+		{% endfor %}
+			<input type=submit>
+		</form>
+	
+{% endblock content %}

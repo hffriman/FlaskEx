@@ -1,0 +1,43 @@
+<!--Sources: Course material--!>
+
+{% if not title %}
+	{% set title = "Address Book" %}
+{% endif %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{{title}}</title>
+</head>
+
+<style>
+	body, pre {font-family:sans-serif; text-align:center}
+</style>
+
+<body>		
+	<h1> Address Book </h1>
+	
+	<nav>
+		<a href="/">Index</a>---<a href="/new">Add</a>
+	</nav>
+	
+	{% if get_flashed_messages() %}
+
+		{% for msg in get_flashed_messages() %}
+
+			<p><b>{{msg}}</b></p>
+
+		{% endfor %}
+	
+	{% endif %}
+
+
+	{% block content %}
+
+	{% endblock content %}
+
+
+</body>
+
+</html>
