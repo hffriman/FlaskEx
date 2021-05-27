@@ -1,0 +1,38 @@
+<!--Source: Course material--!>
+
+{% if not title %}
+	{% set title = "Song List" %}
+{% endif %}
+
+<!DOCTYPE html>
+<head>
+	<title>{{title}}</title>
+	<meta charset="UTF-8">
+	<meta name=viewport
+		content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+	body {font-family:sans-serif; text-align:center}
+</style>
+
+<body>
+	<h1> Song List Application </h1>
+
+	<nav>
+		<a href="/">Index</a> --
+		<a href="/new">New</a> --
+	</nav>
+
+	{% block message %}
+
+	{% endblock message %}
+
+	{% block content %}
+
+	{% endblock content %}
+
+</body>
+
+</html>
+

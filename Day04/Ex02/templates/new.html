@@ -1,0 +1,41 @@
+<!--Source: Course material --!>
+
+{% set title = "Add a New Song" %}
+
+{% extends "base.html" %}
+
+{% block message %}
+
+	{% if get_flashed_messages() %}
+		
+		{% for message in get_flashed_messages() %}
+
+			<p><b>{{message}}</b></p>
+
+		{% endfor %}
+
+	{% endif %}
+				
+{% endblock message %}
+
+
+{% block content %}
+
+	<h2> Add a New Song </h2>
+	
+		<form method=POST>
+		{% for field in form %}
+			<p>
+				{% if not field.flags.hidden %}
+				
+					{{field.label}}
+			
+				{% endif %}
+				
+				{{field}}
+			</p>
+		{% endfor %}
+			<input type=submit>
+		</form>
+
+{% endblock content %}
