@@ -63,7 +63,7 @@ def newsong():
 		db.session.commit()
 
 		flash("Song Added")
-		redirect("/")
+		return redirect("/")
 
 	return render_template("new.html", form=form)
 

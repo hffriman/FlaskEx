@@ -4,21 +4,6 @@
 
 {% extends "base.html" %}
 
-{% block message %}
-
-	{% if get_flashed_messages() %}
-		
-		{% for message in get_flashed_messages() %}
-
-			<p><b>{{message}}</b></p>
-
-		{% endfor %}
-
-	{% endif %}
-				
-{% endblock message %}
-
-
 {% block content %}
 
 	<h2> Add a New Song </h2>

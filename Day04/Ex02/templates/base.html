@@ -26,7 +26,18 @@
 
 	{% block message %}
 
+		{% if get_flashed_messages() %}
+
+			{% for msg in get_flashed_messages() %}
+
+				<p><b>{{msg}}</b></p>
+
+			{% endfor %}
+
+		{% endif %}
+
 	{% endblock message %}
+
 
 	{% block content %}
 
