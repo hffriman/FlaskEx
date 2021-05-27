@@ -9,7 +9,7 @@
 	<h2>Songs</h2>
 	
 	{% for song in songs %}
-		<p>'{{song.title}}' by {{song.artist}} <a href="{{song.id}}/edit">Edit</a></p>
+		<p>'{{song.title}}' by {{song.artist}} ----- <a href="{{song.id}}/edit">Edit</a> /  <a href="{{song.id}}/delete">Delete</a></p>
 	{% endfor%}
 
 {% endblock content %}

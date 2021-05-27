@@ -49,7 +49,7 @@ def index():
 	return render_template("index.html", songs=songs)
 
 
-@app.route("/<int:id>/edit", methods=["GET", "POST"]) # new annotation
+@app.route("/<int:id>/edit", methods=["GET", "POST"]) # new functionality
 @app.route("/new", methods=["GET", "POST"]) #m did not remember most of the function 'newsong()'
 def newsong(id=None):
 
@@ -71,6 +71,15 @@ def newsong(id=None):
 
 	return render_template("new.html", form=form)
 
+
+@app.route("/<int:id>/delete") # new functionality
+def deleteSong(id):
+	song = Song.query.get_or_404(id)
+	db.session.delete(song)
+	db.session.commit()
+
+	flash("Song Deleted")
+	return redirect("/")
 
 
 if __name__ == "__main__":
