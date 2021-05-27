@@ -49,14 +49,18 @@ def index():
 	return render_template("index.html", songs=songs)
 
 
-
+@app.route("/<int:id>/edit", methods=["GET", "POST"]) # new annotation
 @app.route("/new", methods=["GET", "POST"]) #m did not remember most of the function 'newsong()'
-def newsong():
+def newsong(id=None):
 
-	form = SongForm()
+	song = Song()
+
+	if id: song = Song.query.get_or_404(id)
+
+	form = SongForm(obj=song)
 
 	if form.validate_on_submit():
-		song = Song()
+
 		form.populate_obj(song)
 
 		db.session.add(song)
