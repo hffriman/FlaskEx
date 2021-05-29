@@ -1,0 +1,54 @@
+<!--Source: Course material--!>
+
+{% if not title %}
+	{% set title = "Book160" %}
+{% endif %}
+
+<!DOCTYPE html>
+<head>
+	<title>{{title}}</title>
+	<meta charset="UTF-8">
+	<meta name=viewport
+		content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+	body {font-family: sans-serif; text-align: center;"}
+</style>
+
+
+<body>
+
+	<h1>Book160</h1>
+	
+	{% for msg in get_flashed_messages() %}
+		<p><b>{{ msg }}</b></p>
+	{% endfor %}	
+
+	<nav>
+		<a href="/">Home</a> -- 
+		{% if currentUser() %}
+			<a href="/book/new">Add Book</a> --
+			{{ currentUser().email }} --
+			<a href="/user/logout">Logout</a>
+		{% else %}
+			<a href="/user/login">Login</a> --
+			<a href="/user/register">Register</a>
+		{% endif %}
+	</nav>
+
+	<br>
+
+	<h2>{{ title }}</h2>
+	
+	<br>
+	
+	{% block content %}
+		<p>Book160 Website</p>
+	{% endblock %}
+	
+	</body>
+
+</html>
+
+	

@@ -1,0 +1,18 @@
+<!--Source: Course material--!>
+
+{% set title = "Book Summaries" %}
+{% extends "base.html" %}
+
+{% block content %}
+
+	{% for book in books %}
+	
+		<h3> <i>{{ book.title }}</i> by {{ book.author}}</h3> 
+			{% if currentUser() %}	
+				<a href="/book/{{book.id}}/edit">Edit</a> / <a href="/book/{{book.id}}/delete">Delete</a>
+			{% endif %}
+		<p> {{book.summary}} </p> <br>
+
+	{% endfor %}
+
+{% endblock content %}

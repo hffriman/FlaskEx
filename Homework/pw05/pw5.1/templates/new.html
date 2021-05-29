@@ -1,0 +1,25 @@
+<!--Source: Course material--!>
+
+{% set title = "Add a Book Summary" %}
+{% extends "base.html" %}
+
+{% block content %}
+	
+	<form method=POST>
+		{% for field in form %}
+			{% if not field.flags.hidden %}
+				{{ field.label }}: <br>
+			{% endif %}
+		
+			{{ field }} <br>
+
+			{% for err in field.errors %}
+				<b>{{ err }}</b>
+			{% endfor %}
+
+			<br>
+		{% endfor %}
+		<input type=submit>
+	</form>
+
+ {% endblock content %}
