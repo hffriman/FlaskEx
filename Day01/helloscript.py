@@ -1,3 +1,5 @@
+# Source: "Python Web Service from Idea to Production" by Tero Karvinen
+
 from flask import Flask
 
 app = Flask(__name__)

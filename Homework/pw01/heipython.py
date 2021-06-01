@@ -1,3 +1,5 @@
+# Source: "Python Web Service from Idea to Production" by Tero Karvinen
+
 # Help for Round function:
 # --> https://www.tutorialspoint.com/How-to-round-down-to-round-down-to-2-decimals-a-float-using-Python
 

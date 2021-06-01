@@ -1,5 +1,5 @@
 # Sources:
-# -- Course material
+# --  "Python Web Service from Idea to Production" by Tero Karvinen
 # !!  Special thanks to co-students for sharing their
 # !!  problems during class: it helped me to fix my
 # !!  own problem in rendering the "music" array

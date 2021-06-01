@@ -1,5 +1,5 @@
 # Sources:
-#    Course material
+#    Source: "Python Web Service from Idea to Production" by Tero Karvinen
 #    Reddit: "Max string length for SQLite3 with flask-sqlalchemy"
 
 from flask import Flask, render_template, flash, redirect, session
@@ -14,6 +14,7 @@ from wtforms import StringField, PasswordField, validators
 
 app = Flask(__name__)
 app.secret_key = "thaizao5cahPhue0ohCahxie0hohza"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///hffriman"
 db = SQLAlchemy(app)
 
 
@@ -21,7 +22,7 @@ class Book(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	title = db.Column(db.String, nullable=False)
 	author = db.Column(db.String, nullable=False)
-	summary = db.Column(db.Text(160), nullable=False)
+	summary = db.Column(db.String(160), nullable=False)
 
 
 BookForm = model_form(Book, base_class=FlaskForm, db_session = db.session)
@@ -41,7 +42,6 @@ class User(db.Model):
 class UserForm(FlaskForm):
 	email = StringField("email", validators=[validators.email()])
 	password = PasswordField("password", validators=[validators.InputRequired()])
-
 
 
 def currentUser():

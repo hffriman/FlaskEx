@@ -1,4 +1,4 @@
-# Source: Course material
+# Source: "Python Web Service from Idea to Production" by Tero Karvinen
 # Comment 'm' means that I did not remember the syntaxes on my own
 
 from flask import Flask, render_template, redirect, request, flash

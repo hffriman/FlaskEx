@@ -1,5 +1,5 @@
 #Sources:
-#--> Course material
+#--> "Python Web Service from Idea to Production" by Tero Karvinen
 #--> Geeks for Geeks: Python program to print current year, month and day
 
 from flask import Flask, render_template

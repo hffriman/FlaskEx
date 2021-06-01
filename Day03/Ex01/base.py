@@ -1,4 +1,5 @@
-# Sources: Course material
+# Sources:
+# "Python Web Service from Idea to Production" by Tero Karvinen
 # Flask documentation: Message Flashing (version 1.0)
 
 from flask import Flask, render_template, request, flash, redirect
