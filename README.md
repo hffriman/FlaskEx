@@ -1,2 +1,2 @@
 # FlaskEx
-My homework in Tero Karvinen's course "Python Web Service" in Haaga-Helia UAS.
+My homework in Tero Karvinen's course "Python Web Service" of Haaga-Helia UAS.
